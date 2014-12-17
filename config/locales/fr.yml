@@ -1,0 +1,43 @@
+fr:
+  layouts:
+    application_name: "Funkystarter"
+    welcome: "Bienvenue, %{user}"
+
+  home:
+    index:
+      title: "Page d'accueil"
+
+  mongoid:
+    attributes:
+      user:
+        email: "Adresse e-mail"
+        password: "Mot de passe"
+        password_confirmation: "Confirmez le mot de passe"
+        remember_me: "Se souvenir de moi"
+
+  devise:
+    registrations:
+      new:
+        title: "Inscription"
+        minimum_password_length: "%{length} caractères minimum"
+        sign_up: "S'inscrire"
+    sessions:
+      new:
+        title: "Connexion"
+        sign_in: "Se connecter"
+      destroy:
+        sign_out: "Se déconnecter"
+    passwords:
+      new:
+        title: "Mot de passe oublié ?"
+        send_me_instructions: "M'envoyer les instructions de changement"
+      edit:
+        title: "Changement de mot de passe"
+        new_password: "Nouveau mot de passe"
+        confirm_new_password: "Confirmez le nouveau mot de passe"
+        submit: "Changer mon mot de passe"
+
+  time:
+    formats:
+      long: "%A %d %B %Y %Hh%M"
+      short: "%d %b %Hh%M"

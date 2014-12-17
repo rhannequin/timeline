@@ -1,0 +1,38 @@
+en:
+  layouts:
+    application_name: "Funkystarter"
+    welcome: "Welcome, %{user}"
+
+  home:
+    index:
+      title: "Home page"
+
+  mongoid:
+    attributes:
+      user:
+        email: "Email"
+        password: "Password"
+        password_confirmation: "Password confirmation"
+        remember_me: "Remember me"
+
+  devise:
+    registrations:
+      new:
+        title: "Sign Up"
+        minimum_password_length: "%{length} characters minimum"
+        sign_up: "Sign up"
+    sessions:
+      new:
+        title: "Sign In"
+        sign_in: "Sign in"
+      destroy:
+        sign_out: "Sign out"
+    passwords:
+      new:
+        title: "Password forgotten?"
+        send_me_instructions: "Send me reset instructions"
+      edit:
+        title: "Change your password"
+        new_password: "New password"
+        confirm_new_password: "Confirm new password"
+        submit: "Change my password"
