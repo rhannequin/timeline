@@ -9,7 +9,7 @@ task :fork, :location do |t, args|
   project_name = project_string.capitalize
 
   files = %w(
-    README.rdoc
+    README.md
     config/application.rb
     config/mongoid.yml
     config/initializers/session_store.rb
