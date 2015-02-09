@@ -36,3 +36,9 @@ $ bundle exec rake fork[/home/xxx/my-new-project]
 Where `/home/xxx/my-new-project` is where you want to create your project.
 
 Names like `my-new-project` will create a module like `MyNewProject`.
+
+**Warning:** if you are using [ZSH](https://github.com/robbyrussell/oh-my-zsh), you have to use another syntax:
+
+`$ bundle exec rake fork\[/home/xxx/my-new-project\]` or
+
+`$ noglob bundle exec rake fork[/home/xxx/my-new-project]`.
