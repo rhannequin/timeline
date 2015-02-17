@@ -1,6 +1,6 @@
 fr:
   layouts:
-    application_name: "Funkystarter"
+    application_name: "Timeline"
     welcome: "Bienvenue, %{user}"
 
   home:
