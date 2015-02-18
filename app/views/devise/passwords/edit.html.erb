@@ -3,7 +3,9 @@
     <h4><%= t(:'.change_your_password') %></h4>
   </div>
   <div class="panel-body">
-    <%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :put, role: "form" }) do |f| %>
+    <%= simple_form_for(resource, as: resource_name,
+                                  url: password_path (resource_name),
+                                  html: { method: :put, role: "form" }) do |f| %>
       <%= f.hidden_field :reset_password_token %>
 
       <div class="form-group">
@@ -20,4 +22,5 @@
     <% end %>
   </div>
 </div>
+
 <%= render "devise/shared/links" %>

@@ -1,16 +1,41 @@
 ---
 fr:
-  helpers:
-    label:
-      user:
-        current_password: Mot de passe actuel
-        email: E-mail
-        password: Mot de passe
-        password_confirmation: Confirmation du mot de passe
-        remember_me: Se souvenir de moi
+  devise:
+    passwords:
+      edit:
+        change_my_password: Changer mon mot de passe
+        change_your_password: Changez votre mot de passe
+        confirm_new_password: Confirmez le nouveau mot de passe
+        new_password: Nouveau mot de passe
+      new:
+        forgot_your_password: Mot de passe oublié ?
+        send_me_reset_password_instructions: Envoyez-moi les instructions pour réinitialiser mon mot de passe
+    registrations:
+      new:
+        sign_up: Inscription
+    sessions:
+      destroy:
+        sign_out: Déconnexion
+      new:
+        sign_in: Connexion
+    shared:
+      links:
+        didn_t_receive_confirmation_instructions: Vous n'avez pas reçu le mail de confirmation ?
+        didn_t_receive_unlock_instructions: Vous n'avez pas reçu le mail de débloquage ?
+        forgot_your_password: Mot de passe oublié ?
+        sign_in: Connexion
+        sign_in_with_provider: Connexion avec %{provider}
+        sign_up: Inscription
   home:
     index:
       title: Page d'accueil
   layouts:
     application_name: Timeline
     welcome: Bienvenue, %{user}
+  simple_form:
+    labels:
+      user:
+        email: Adresse e-mail
+        password: Mot de passe
+        password_confirmation: Confirmez le mot de passe
+        remember_me: Se souvenir de moi

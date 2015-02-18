@@ -3,25 +3,25 @@
     <h4><%= t(:'.sign_in') %></h4>
   </div>
   <div class="panel-body">
-    <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { role: "form" }) do |f| %>
+    <%= simple_form_for(resource, as: resource_name,
+                                  url: session_path(resource_name),
+                                  html: { role: "form" }) do |f| %>
       <div class="form-group">
-        <%= f.label :email %>
-        <%= f.email_field :email, autofocus: true, class: "form-control" %>
+        <%= f.input :email, autofocus: true, class: "form-control" %>
       </div>
       <div class="form-group">
-        <%= f.label :password %>
-        <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
+        <%= f.input :password, autocomplete: "off", class: "form-control" %>
       </div>
       <% if devise_mapping.rememberable? %>
         <div class="checkbox">
-          <label>
-            <%= f.check_box :remember_me %>
-            <%= f.label :remember_me %>
-          </label>
+          <%= f.input :remember_me, as: :boolean,
+                                    label: false,
+                                    inline_label: true if devise_mapping.rememberable? %>
         </div>
       <% end %>
       <%= f.submit t(:'.sign_in'), class: "btn btn-primary" %>
     <% end %>
   </div>
 </div>
+
 <%= render "devise/shared/links" %>

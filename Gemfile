@@ -36,6 +36,9 @@ gem 'jbuilder', '~> 2.0'
 ## Use respond_to and respond_with methods
 gem 'responders', '~> 2.0'
 
+# Simple Form
+gem 'simple_form'
+
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.0'         # RSpec test framework
@@ -44,11 +47,13 @@ group :development, :test do
   gem 'capybara'                      # Integration tests
   gem 'faker'                         # Use real values to fake for factories
   gem 'web-console', '~> 2.0'         # Web Console
+  gem 'i18n-tasks'                    # Finds and manage missing and unused translations
 end
 
 
 group :development do
   gem 'spring'                        # Keeps application running in the background
+  gem 'quiet_assets'                  # Turns off the Rails asset pipeline log
 end
 
 
