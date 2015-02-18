@@ -2,13 +2,6 @@
   <% if msg.is_a?(String) -%>
     <div class="alert alert-<%= set_alert_class name %>">
       <a class="close" data-dismiss="alert">&#215;</a>
-      <% if name.eql?('cas_logout') -%>
-        <% msg += ' ' << link_to(cas_logout_path, class: 'btn btn-danger btn-sm') do -%>
-          <span class="glyphicon glyphicon-off"></span>
-          <%= t(:'unauthorized.cas_logout') %>
-        <% end -%>
-        <% msg = msg.html_safe %>
-      <% end -%>
       <%= content_tag :div, msg, id: "flash_#{name}" %>
     </div>
   <% end -%>

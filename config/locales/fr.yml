@@ -1,43 +1,16 @@
+---
 fr:
-  layouts:
-    application_name: "Timeline"
-    welcome: "Bienvenue, %{user}"
-
+  helpers:
+    label:
+      user:
+        current_password: Mot de passe actuel
+        email: E-mail
+        password: Mot de passe
+        password_confirmation: Confirmation du mot de passe
+        remember_me: Se souvenir de moi
   home:
     index:
-      title: "Page d'accueil"
-
-  mongoid:
-    attributes:
-      user:
-        email: "Adresse e-mail"
-        password: "Mot de passe"
-        password_confirmation: "Confirmez le mot de passe"
-        remember_me: "Se souvenir de moi"
-
-  devise:
-    registrations:
-      new:
-        title: "Inscription"
-        minimum_password_length: "%{length} caractères minimum"
-        sign_up: "S'inscrire"
-    sessions:
-      new:
-        title: "Connexion"
-        sign_in: "Se connecter"
-      destroy:
-        sign_out: "Se déconnecter"
-    passwords:
-      new:
-        title: "Mot de passe oublié ?"
-        send_me_instructions: "M'envoyer les instructions de changement"
-      edit:
-        title: "Changement de mot de passe"
-        new_password: "Nouveau mot de passe"
-        confirm_new_password: "Confirmez le nouveau mot de passe"
-        submit: "Changer mon mot de passe"
-
-  time:
-    formats:
-      long: "%A %d %B %Y %Hh%M"
-      short: "%d %b %Hh%M"
+      title: Page d'accueil
+  layouts:
+    application_name: Timeline
+    welcome: Bienvenue, %{user}
