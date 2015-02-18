@@ -9,17 +9,20 @@
 </head>
 <body>
 
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
+<div class="container">
 
-<div>
-<% if user_signed_in? -%>
-  <p><%= t :'layouts.welcome', user: current_user.email %></p>
-  <p><%= link_to t(:'devise.sessions.destroy.sign_out'), destroy_user_session_path, method: :delete %></p>
-<% end -%>
+  <%= render 'layouts/alerts' %>
+
+  <div>
+  <% if user_signed_in? -%>
+    <p><%= t :'layouts.welcome', user: current_user.email %></p>
+    <p><%= link_to t(:'devise.sessions.destroy.sign_out'), destroy_user_session_path, method: :delete %></p>
+  <% end -%>
+  </div>
+
+  <%= yield %>
+
 </div>
-
-<%= yield %>
 
 </body>
 </html>
