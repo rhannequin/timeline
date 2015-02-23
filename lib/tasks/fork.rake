@@ -1,7 +1,7 @@
 require 'fileutils'
 
 desc 'Fork this starter to build a new project from it'
-task :fork, :location do |t, args|
+task :fork, :location do |_, args|
   location = args.location
   folder = to_folder_name location
   module_name = to_module_name folder
@@ -29,11 +29,10 @@ task :fork, :location do |t, args|
   end
 end
 
-
 def to_folder_name(str)
   str.split('/').last.downcase
 end
 
 def to_module_name(str)
-  str.split('-').map { |w| w.capitalize } .join('')
+  str.split('-').map(&:capitalize).join('')
 end

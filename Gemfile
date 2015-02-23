@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 4.2.0'
 
@@ -39,7 +38,6 @@ gem 'responders', '~> 2.0'
 # Simple Form
 gem 'simple_form'
 
-
 group :development, :test do
   gem 'rspec-rails', '~> 3.0'         # RSpec test framework
   gem 'mongoid-rspec', '~> 2.0.0.rc1'
@@ -50,18 +48,16 @@ group :development, :test do
   gem 'i18n-tasks'                    # Finds and manage missing and unused translations
 end
 
-
 group :development do
   gem 'spring'                        # Keeps application running in the background
   gem 'quiet_assets'                  # Turns off the Rails asset pipeline log
+  gem 'rubocop'
 end
-
 
 group :test do
   gem 'database_cleaner'              # Clean database during tests
-  gem 'simplecov', :require => false  # Test coverage
+  gem 'simplecov', require: false  # Test coverage
 end
-
 
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
@@ -77,4 +73,3 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
-
