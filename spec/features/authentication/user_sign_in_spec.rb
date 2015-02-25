@@ -32,4 +32,16 @@ feature 'Sign in' do
       expect(page).to have_link I18n.t(:'devise.sessions.destroy.sign_out')
     end
   end
+
+  describe 'when signing up with Twitter' do
+    background do
+      mock_auth_twitter
+      visit user_omniauth_authorize_path(provider: 'twitter')
+    end
+
+    scenario 'user is connected with his Twitter account' do
+      expect(page).to have_content I18n.t(:'devise.sessions.destroy.sign_out')
+      # expect(page).to have_content 'mock@email.com'
+    end
+  end
 end

@@ -2,6 +2,8 @@ class User
   include Mongoid::Document
 
   field :name,               type: String
+  field :provider,           type: String
+  field :uid,                type: String
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
@@ -39,5 +41,14 @@ class User
 
   def self.serialize_into_session(record)
     [record.id.to_s, record.authenticatable_salt]
+  end
+
+  def self.from_omniauth(auth)
+    where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
+      user.provider = auth.provider
+      user.uid = auth.uid
+      user.email = auth.info.email
+      user.password = Devise.friendly_token[0, 20]
+    end
   end
 end
