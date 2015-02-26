@@ -41,7 +41,7 @@ feature 'Sign in' do
 
     scenario 'user is connected with his Twitter account' do
       expect(page).to have_content I18n.t(:'devise.sessions.destroy.sign_out')
-      # expect(page).to have_content 'mock@email.com'
+      expect(page).to have_content 'Twitter User' # See Macros::Omniauth
     end
   end
 end
