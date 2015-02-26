@@ -39,6 +39,9 @@ class User
   # field :unlock_token,    type: String # Only if unlock strategy is :email or :both
   # field :locked_at,       type: Time
 
+  # Validations
+  validates_uniqueness_of :email
+
   def self.serialize_into_session(record)
     [record.id.to_s, record.authenticatable_salt]
   end
