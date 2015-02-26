@@ -29,6 +29,7 @@ feature 'Sign in' do
     scenario 'he should be signed in' do
       expect(current_path).to eq(root_path)
       expect(page).to have_content I18n.t(:'devise.sessions.signed_in')
+      expect(page).to have_content user.name
       expect(page).to have_link I18n.t(:'devise.sessions.destroy.sign_out')
     end
   end
