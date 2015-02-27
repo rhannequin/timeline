@@ -40,19 +40,23 @@ class User
   # field :locked_at,       type: Time
 
   # Validations
-  validates_uniqueness_of :email
+  validates :email, uniqueness: true
 
   def self.serialize_into_session(record)
     [record.id.to_s, record.authenticatable_salt]
   end
 
   def self.from_omniauth(auth)
-    where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
-      user.provider = auth.provider
-      user.uid = auth.uid
-      user.name = auth.info.name
-      user.email = auth.info.email
-      user.password = Devise.friendly_token[0, 20]
-    end
+    where(provider: auth.provider, uid: auth.uid)
+      .first_or_create { |u| user_hash(u, auth) }
+  end
+
+  def self.user_hash(user, auth)
+    user.provider = auth.provider
+    user.uid = auth.uid
+    user.name = auth.info.name
+    user.email = auth.info.email
+    user.password = Devise.friendly_token[0, 20]
+    user
   end
 end

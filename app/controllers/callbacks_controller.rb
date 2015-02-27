@@ -10,7 +10,8 @@ class CallbacksController < Devise::OmniauthCallbacksController
   end
 
   private
-    def omniauth_auth
-      request.env["omniauth.auth"]
-    end
+
+  def omniauth_auth
+    request.env['omniauth.auth']
+  end
 end
