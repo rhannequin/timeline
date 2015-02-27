@@ -34,15 +34,17 @@ feature 'Sign in' do
     end
   end
 
-  describe 'when signing up with Twitter' do
-    background do
-      mock_auth_twitter
-      visit user_omniauth_authorize_path(provider: 'twitter')
-    end
+  %w(twitter facebook).each do |provider|
+    describe "when signing up with #{provider.capitalize}" do
+      background do
+        send :"mock_auth_#{provider}"
+        visit user_omniauth_authorize_path(provider: provider)
+      end
 
-    scenario 'user is connected with his Twitter account' do
-      expect(page).to have_content I18n.t(:'devise.sessions.destroy.sign_out')
-      expect(page).to have_content 'Twitter User' # See Macros::Omniauth
+      scenario "user is connected with his #{provider.capitalize} account" do
+        expect(page).to have_content I18n.t(:'devise.sessions.destroy.sign_out')
+        expect(page).to have_content "#{provider.capitalize} User" # See Macros::Omniauth
+      end
     end
   end
 end
